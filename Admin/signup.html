@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voiceout.com</title>
+    <link rel="stylesheet" href="bootstrp4/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Admin/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-8 col-10 bg-warning ml-auto  signup_design  ">
+
+                <div class="row">
+                    <div class="col-sm-6 welcomepage d-none d-sm-block">
+
+                        <h5>Welcome!!!!</h5>
+                        <h3>Take Your First Step <br> By Signing Up </h3>
+
+                        <div class="mt-4">
+                            <p>Provide your information</p>
+                        </div>
+
+                        <div>
+                            <p>Provide Your Username </p>
+                        </div>
+
+                        <div>
+                            <p>Set Password</p>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col-sm-6 col-10 mx-auto">
+                        <form class=" mt-3">
+                            <h5><b>Input Your information</b></h5>
+                            <p>Stay Informed!</p>
+                            <div class="row">
+                                <div class="col-6 ">
+                                    <input type="text" placeholder="Surname" class="form-control" id="surname">
+                                    <div id="surnameerror"></div>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" placeholder="Firstname" class="form-control" id="firstname">
+                                    <div id="firstnameerror" class="texterror"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <input type="email" placeholder="Input Your Email" class="form-control" id="email"
+                                    required>
+                                <div id="emailerror"></div>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <input type="password" placeholder="Input Your Password" class="form-control"
+                                    id="password">
+                                <div id="passerror"></div>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <input type="password" placeholder="Confirm Your Password" class="form-control"
+                                    id="password1">
+                                <div id="passerror1"></div>
+                            </div>
+
+                            <input type="submit" value="Register" onclick="registerUser(); event.preventDefault()"
+                                class="btn btn-success form-control">
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    var surname = document.getElementById("surname");
+    var firstname = document.getElementById("firstname");
+    var email = document.getElementById("email");
+    var password = document.getElementById("password");
+    var password1 = document.getElementById("password1");
+    var surnameerror = document.getElementById("surnameerror");
+    var firstnameerror = document.getElementById("firstnameerror");
+    var emailerror = document.getElementById("emailerror");
+    var passerror = document.getElementById("passerror");
+    var passerror1 = document.getElementById("passerror1");
+
+
+
+
+
+
+    function registerUser() {
+
+
+        surnameerror.innerHTML = "";
+        firstnameerror.innerHTML = "";
+        emailerror.innerHTML = "";
+        passerror.innerHTML = "";
+        passerror1.innerHTML = "";
+
+        if (surname.value == "") {
+            //alert("Surname Can not be empty")
+            surnameerror.innerHTML = "Surname cannot be empty"
+            surnameerror.style.color = "red";
+            return false;
+        }
+
+
+        if (firstname.value == "") {
+            // alert("Surname Can not be empty")
+            firstnameerror.innerHTML = "Surname cannot be empty"
+            firstnameerror.style.color = "red"
+            return false;
+        }
+
+
+        if (email.value == "") {
+            // alert("Surname Can not be empty")
+            emailerror.innerHTML = "Email cannot be empty"
+            emailerror.style.color = "red"
+            return false;
+        }
+
+        if (password.value == "") {
+            // alert("Surname Can not be empty")
+            passerror.innerHTML = "Password cannot be empty"
+
+            return false;
+        } else
+
+
+            if (password.value.length < 5) {
+                // alert("Surname Can not be empty")
+                passerror.innerHTML = "Password must be more than four character"
+                passerror.style.color= "red"
+                return false;
+            }
+        /*     if (password1.value = "") {
+                // alert("Surname Can not be empty")
+                passerror1.innerHTML = "Confirm your password "
+                return false;
+            }
+          */
+        if (password.value != password1.value) {
+            // alert("Surname Can not be empty")
+            passerror1.innerHTML = "Password must match "
+            passerror1.style.color = "red"
+            return false;
+        }
+
+        if (surname.value != "" & password.value != "") {
+            swal({
+                title: "Notice!!!!",
+                text: "This Platform Will Be Updated Soon!",
+                icon: "info",
+                button: "Return To Blog!",
+            });
+            window.location.href = "../index.html"
+        }
+
+
+        fetch("https://imesiapi.everythingpropagule.com/user/register")
+            .then(data => {
+                return data.json();
+            })
+
+            const cart = {
+                "key": key,
+                "value": value,
+
+            }
+
+            .then(post => {
+                // const data = data.value;
+                console.log(data(key,value));
+            });
+
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+<script src="bootstrp4/jquery.min.js"></script>
+<script src="bootstrp4/bootstrap.min.js"></script>
+<script src="bootstrp4/popper.min.js"></script>
+<script src="blognews.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</html>

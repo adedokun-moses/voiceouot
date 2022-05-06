@@ -1,0 +1,149 @@
+/* body{
+    margin: 0px;
+    padding: 0px;
+}
+ */
+
+/* Sign Up */
+.signup_design {
+    margin-top: 70px;
+    border-radius: 10px;
+    height: 70vh;
+    margin-right: 30px;
+  
+
+}
+
+.welcomepage h5 {
+    margin-top: 20px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.welcomepage h3 {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*  LOg In */
+
+.logcontainer {
+    height: 60vh;
+    border-radius: 10px;
+    margin-top: 100px;
+
+}
+
+
+.logcontainer h5 {
+    font-size: 40px;
+}
+
+.logcontainer a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Log In Ends Here */
+
+.homenav {
+    margin-left: 400px;
+
+}
+
+.tabs {
+    height: 100vh;
+
+}
+
+.tabs ul {
+    list-style: none;
+
+
+}
+
+.tabs li a {
+    margin: 10px 5px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: red;
+    border-radius: px;
+    height: auto;
+    width: 70%;
+
+}
+
+.tabs li a:hover {
+    margin: 10px 5px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: grey;
+    border-radius: 10px;
+    height: auto;
+    width: 70%;
+    background-color: yellow;
+
+}
+
+.tabs li .active {
+    margin: 10px 5px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: grey;
+    border-radius: 10px;
+    height: auto;
+    width: 70%;
+    background-color: yellow;
+
+}
+
+.tabs li .active,
+.tabs li a:hover,
+.tabs li a:focus {
+    margin: 10px 5px;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: grey;
+    border-radius: 10px;
+    height: auto;
+    width: 70%;
+    background-color: yellow;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    /* Sign Up */
+   .signup_design {
+        margin-top: 30px;
+        border-radius: 5px;
+        height: 80vh ;
+        margin-left: 20px;
+       
+       
+    } 
+    .texterror{
+        font-size: 10px;
+        font-weight: bold;
+       margin-bottom: 2px;
+    }
+
+ /*    .welcomepage h5 {
+        margin-top: 20px;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .welcomepage h3 {
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+ */
+}

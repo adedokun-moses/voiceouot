@@ -1,0 +1,244 @@
+.america{
+    margin-top: 40px;
+    
+}
+.amee{
+    border: 3px solid grey;
+    min-height: 100px ;
+}
+
+.ame{
+    border-bottom: grey 2px solid;
+    margin-top: 10px;
+}
+.ame p{
+    font-weight: bold;
+}
+.caption{
+    position: absolute;
+    left: 15px;
+    margin: 5px;
+    top: 10px;
+    
+}
+.caption h5{
+    margin: 30px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+caption p{
+    margin: 10px;
+}
+.capt h3{
+    color: blue;
+}
+.capt p, h5{
+    color: black;
+}
+.capt{
+    position: absolute;
+    top: 15px;
+    margin: 5px;
+    left: 0px;
+}
+.btncap{
+    height: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: blue;
+}
+
+.img{
+    height: 160px;
+    width: 100%;
+}
+.imgg{
+    height: 50px;
+    width: 40%;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    
+}
+.savings_text{
+    background: grey;
+    color: white;
+}
+.savings_text{
+    font-weight: bold;
+}
+
+.savings_text hr{
+    width: 100%;
+    background-color: white;
+}
+
+.more{
+    width: 100%;
+    min-height: 500px;
+    background: grey;
+    margin-top: 40px;
+}
+
+.more h3{
+    text-align: center;
+}
+
+.lady{
+    width: 100%;
+}
+.office{
+   
+    background: transparent;
+    
+    margin-top: 40px;
+
+    
+    
+}
+
+.office2{
+    border-radius: 10px;
+    background: white;
+  
+}
+
+
+.signin{
+  display: flex;
+  flex-direction: column;
+}
+.signup{
+    display: none;
+    /*flex-direction: column;*/
+}
+#chkbox{
+ margin-left: 120px;
+  
+}
+#chkbox:checked ~ .signup{
+    display: flex;
+}
+#chkbox:checked ~ .signin{
+    display: none;
+}
+
+#chkbox:checked + .layer{
+    left: 50%;
+}
+#chkbox:checked ~ .layer2{
+    left: 50%;
+}
+.layer{
+    content: "";
+    height: 50px;
+    width: 130px;
+    background-color: red;
+    float: right;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.layer2{
+    content: "";
+    height: 50px;
+    width: 130px;
+    background-color: grey;
+    float: right;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+
+.button{
+    border: 1px solid blue;
+}
+
+.mee{
+    min-height: 300px;
+    background-color: white;
+    background-image: url(/image/logogo.jpg );
+    margin-top: 20px;
+}
+
+.meet{
+    
+    background-color: transparent;
+    margin-top: 40px;
+    
+}
+.me p{
+    text-align: center;
+    margin-top: 15px;
+}
+.me h5{
+    text-align: center;
+    margin-top: 15px;
+}
+.me{
+    background-color: white;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.mypics{
+    margin: auto;
+    display: block;
+}
+
+.btnmeet{
+    height: 60px;
+}
+
+.foot{
+    margin-top: 30px;
+    
+}
+
+.foot ul{
+    list-style: none;
+    
+}
+
+.font ul{
+    list-style: none;
+}
+.font li{
+    float: left;
+    margin: 10px;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+.secure{
+    background-color: blue;
+   overflow: auto;
+   height: 80px;
+    
+}
+
+.well1{
+    margin: 15px;
+   
+       
+}
+
+.well1 h5{
+    color: white;
+    margin: 5px;
+}
+
+.well1 button{
+    border-radius: 5px;
+    background: white;
+    height: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: blue;
+    border: none;
+}
+
