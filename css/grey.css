@@ -82,9 +82,9 @@ Forum  */
     font-size: 50px;
 }
 .btn_event{
-    margin-left: 600px;
+    margin-left: 700px;
     margin-top: 10px;
-}
+} 
 .form{
     width: 480px;
     height: 1000px;
@@ -252,17 +252,17 @@ Forum  */
     .exploebtn{
         margin-left: 0px;
     }
-
+/* 
     .headline{
         display: none;
-    }
+    } */
     .news h3{
         padding-top: 10px;
     }
-    .btn_event{
-        margin-left: 100px;
+     .btn_event{
+        margin-left: 130px;
         margin-top: 10px;
-    }
+    } 
     .topp{
         padding-top: 20px;
     }
