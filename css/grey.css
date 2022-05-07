@@ -3,12 +3,17 @@
 .navbar-brand{
     display: none;
 }
+.headline{
+    line-height: normal;
+    
+}
 
 .headline a{
     text-decoration: none;
     color: black;
     font-family: Verdana, Tahoma, sans-serif;
 }
+
  .exploebtn{
     margin-left: 500px;
 }
