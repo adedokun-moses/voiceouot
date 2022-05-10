@@ -240,7 +240,7 @@ Forum  */
    }
 
    .news{
-       margin: 10px;
+       margin: 0px;
    }
    .news h3{
        font-weight: bold;
@@ -252,7 +252,6 @@ Forum  */
         display: block;
         color: white;
         font-weight: bold;
-       
     }
     .exploebtn{
         margin-left: 0px;
