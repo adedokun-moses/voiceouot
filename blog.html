@@ -37,7 +37,7 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item ">
           <a href="index.html" class="nav-link text-white">Home</a>
-      </li>
+        </li>
         <li class="nav-item ">
           <a href="blog.html" class="nav-link text-white">Blog</a>
         </li>
@@ -82,42 +82,57 @@
           <div class="col-sm-8 news">
             <div class="row" id="blogpost"></div>
           </div>
-          <div class="col-sm-4 news2">
+          <div class="col-sm-4  ">
+
             <div class="row">
-              <h5 class="ml-3"><b>Latest News</b></h5>
-              <div class="col-sm-12 mt-2 img_block">
-                <img id="image" alt="" class="img_blog">
-                <p id="posttitle"></p>
-              </div>
+                <div class="col-sm-12">
+                    <h5><b>Latest News</b></h5>
+                </div>
 
-              <div class="col-sm-12 mt-2 img_block">
-                <img id="image1" class="img_blog" alt="">
-                <p id="posttitle1"></p>
-
-              </div>
-              <a href="./blog.html" class="btn btn-success  mx-auto">Read More</a>
-
-              <div>
-                <h5 class="ml-3"><b>Events</b></h5>
-                <div class="col-sm-12 d-flex img_block mt-2">
-
-                  <div id="context"></div>
-                  <img id="event_img" alt="" class="event_img mt-2">
+                <div class="col-sm-12  ">
+                    <!-- <img id="image12" class="img_blog" alt="">
+                    <p id="posttitle12"></p> -->
+                    <div class="row" id="blogp"></div>
 
                 </div>
-                <div class=" col-sm-12 d-flex img_block mt-2">
+            <!--     <a href="./blog.html" class="btn btn-success  mx-auto">Read More</a> -->
 
-                  <div id="context2"></div>
-                  <img id="event_img1" alt="" class="event_img mt-2">
+                <div>
+                    <div class="col-sm-12">
+                        <h5><b>Events</b></h5>
+                    </div>
+
+                    <!--     <div class="d-flex col-sm-12 mt-2 img_block">
+
+                        <div id="context11"></div>
+                        <img id="event_img11" alt="" class="event_img mt-2">
+
+                    </div> -->
+                    <div class=" col-sm-12 mt-2 img_block">
+                        <!-- 
+                        <div id="context12"></div>
+                        <img id="event_img12" alt="" class="event_img mt-2"> -->
+                        <div class="row" id="eventpos"></div>
+
+
+
+                    </div>
+
+
+                 <!--    <a href="./event.html" class="btn btn-success mt-4 entbtn ">See Other
+                        Events</a> -->
+
+
+
+
 
                 </div>
-                <a href="./event.html" class="btn btn-success mt-2  entbtn">See Other Events</a>
-              </div>
 
 
 
             </div>
-          </div>
+
+        </div>
         </div>
       </div>
     </div>
@@ -171,6 +186,84 @@
 </body>
 
 <script>
+
+
+        
+blogp();
+    function blogp() {
+        fetch("https://imesiapi.everythingpropagule.com/blog/blog_posts").then(
+            (res) => {
+                res.json().then((data) => {
+                    console.log(data);
+
+                    if (data.length > 0) {
+                        var blogp = "";
+                        let count = 0;
+                        data.forEach((itemData) => {
+                            if (count < 2) {
+                                blogp += "<div class='col-sm-12 col-6 cont'>"
+                                blogp += "<a href='eventpostpage.html?itemid= " + data[count]["id"] + "' class='blog_container'>";
+                                blogp += "<img class='img_blog' src ='https://" + data[count]["banner"] + "'>";
+                                blogp += "<h4 class='head_text'>" + data[count]["title"] + "</h4>";
+                                blogp += "<h5 class='mt-3 content  '>" + data[count]["content"].substring(0, 100) + "</h5>";
+                                /* blogp += "<p>"+data[0]['posted_by']+"</p>";
+                               blogp += "<p>"+data[0]['posted_date']+"</p>";  */
+                                blogp += "</a>";
+                                blogp += "</div>";
+                            }
+
+
+                            count++;
+                        });
+                    }
+
+                    blogp += "<a href ='blog.html' class='btn btn-success mx-auto mt-3'  > Read More </a>";
+                    document.getElementById("blogp").innerHTML =blogp;
+
+                });
+            }
+        );
+
+    }
+
+    eventp();
+    function eventp() {
+        fetch("https://imesiapi.everythingpropagule.com/event/events").then(
+            (res) => {
+                res.json().then((data) => {
+                    console.log(data);
+
+                    if (data.length > 0) {
+                        var blogp = "";
+                        let count = 0;
+                        data.forEach((itemData) => {
+                            if (count < 2) {
+                                blogp += "<div class='col-sm-12 col-6 cont'>"
+                                blogp += "<a href='eventpostpage.html?itemid= " + data[count]["id"] + "' class='blog_container'>";
+                                blogp += "<img class='img_blog' src ='https://" + data[count]["banner"] + "'>";
+                                blogp += "<h4 class='head_text'>" + data[count]["title"] + "</h4>";
+                                blogp += "<h5 class='mt-3 content  '>" + data[count]["content"].substring(0, 100) + "</h5>";
+                                /* blogp += "<p>"+data[0]['posted_by']+"</p>";
+                               blogp += "<p>"+data[0]['posted_date']+"</p>";  */
+                                blogp += "</a>";
+                                blogp += "</div>";
+                            }
+
+
+                            count++;
+                        });
+                    }
+
+                    blogp += "<a href ='blog.html' class='btn btn-success mx-auto mt-3'  > See More Events </a>";
+                    document.getElementById("eventpos").innerHTML =blogp;
+
+                });
+            }
+        );
+
+    }
+
+
   blogPost();
   function blogPost() {
     fetch("https://imesiapi.everythingpropagule.com/blog/blog_posts").then(
@@ -180,17 +273,19 @@
 
           if (data.length > 0) {
             var blogp = "";
-            let count = 1;
+            let count = 0;
             data.forEach((itemData) => {
-              blogp += "<div class='col-sm-6 col-6 cont'>"
-              blogp += "<a href='postpage.html?itemid= " + count + "' class='blog_container'>";
-              blogp += "<img class='img_blog' src ='https://" + data[0]["banner"] + "'>";
-              blogp += "<h4 class='head_text'>" + data[0]["title"] + "</h4>";
-              blogp += "<h5 class='mt-3 content'>" + data[0]["content"].substring(0, 180) + "</h5>";
-              /* blogp += "<p>"+data[0]['posted_by']+"</p>";
-             blogp += "<p>"+data[0]['posted_date']+"</p>";  */
-              blogp += "</a>";
-              blogp += "</div>";
+              /* if (count < 2) { */
+                blogp += "<div class='col-sm-6 col-6 cont'>"
+                blogp += "<a href='postpage.html?itemid= " + data[count]["id"] + "' class='blog_container'>";
+                blogp += "<img class='img_blog' src ='https://" + data[count]["banner"] + "'>";
+                blogp += "<h4 class='head_text'>" + data[count]["title"] + "</h4>";
+                blogp += "<h5 class='mt-3 content  '>" + data[count]["content"].substring(0, 100) + "</h5>";
+                /* blogp += "<p>"+data[0]['posted_by']+"</p>";
+               blogp += "<p>"+data[0]['posted_date']+"</p>";  */
+                blogp += "</a>";
+                blogp += "</div>";
+            /*   } */
 
 
               count++;
@@ -198,12 +293,7 @@
           }
 
           document.getElementById("blogpost").innerHTML = blogp;
-          /*   document.getElementById('title').innerHTML = data[0]['title'];
-                      document.getElementById('content').innerHTML = (data[0]['content']);
-                      document.getElementById('banner').src = "https://"+data[0]['banner'];
-                      document.getElementById('posted_by').innerHTML = ("Posted By: "+data[0]['posted_by']);
-                      document.getElementById('posted_date').innerHTML = (data[0]['posted_date']);
-                  */
+
         });
       }
     );
@@ -226,7 +316,7 @@
       res => {
         res.json().then(
           data => {
-            console.log(data);
+            //console.log(data);
             let count = 1;
             document.getElementById('image').src = ("https://" + data[0]['banner']);
             document.getElementById('posttitle').innerHTML = "<a href='postpage.html?itemid=" + count + "'>" + data[0]['title'];
@@ -246,7 +336,7 @@
       res => {
         res.json().then(
           data => {
-            console.log(data);
+            // console.log(data);
             let count = 1;
             document.getElementById('image1').src = "https://" + data[0]['banner'];
             document.getElementById('posttitle1').innerHTML = "<a href='postpage.html?itemid=" + count + "'>" + data[0]['title'];
@@ -267,7 +357,7 @@
       res => {
         res.json().then(
           data => {
-            console.log(data);
+            //console.log(data);
             let count = 1
             /*  document.getElementById('title').innerHTML = data[0]['title']; */
             document.getElementById('context').innerHTML = ("<a href='eventpostpage.html?itemid=" + count + "'>" + data[0]['content']);
@@ -287,7 +377,7 @@
       res => {
         res.json().then(
           data => {
-            console.log(data);
+            //console.log(data);
             let count = 1;
             /*  document.getElementById('title').innerHTML = data[0]['title']; */
             document.getElementById('context2').innerHTML = ("<a href='eventpostpage.html?itemid=" + count + "'>" + data[0]['content']);

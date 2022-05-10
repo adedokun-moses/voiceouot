@@ -10,7 +10,7 @@
     border-radius: 10px;
     height: 70vh;
     margin-right: 30px;
-  
+
 
 }
 
@@ -53,88 +53,70 @@
 }
 
 .tabs {
-    height: 100vh;
-
+    overflow: auto;
 }
 
 .tabs ul {
     list-style: none;
-
-
+    padding: 0px;
+    margin: 0px;
 }
 
 .tabs li a {
-    margin: 10px 5px;
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     text-decoration: none;
     display: block;
-    color: red;
-    border-radius: px;
-    height: auto;
-    width: 70%;
+    color: black;
+    border-radius: 5px;
+
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
 
 }
+
 
 .tabs li a:hover {
-    margin: 10px 5px;
-    padding: 10px;
+    margin: 10px;
+    padding: 5px;
     text-decoration: none;
     display: block;
-    color: grey;
-    border-radius: 10px;
+    color: white;
+    background: black;
+    border-radius: 5px;
     height: auto;
-    width: 70%;
-    background-color: yellow;
+    width: 90%;
+    font-size: 13px;
+    font-weight: bold;
 
 }
 
-.tabs li .active {
-    margin: 10px 5px;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    color: grey;
-    border-radius: 10px;
-    height: auto;
-    width: 70%;
-    background-color: yellow;
-
+.navbar-toggler {
+    display: none;
 }
 
-.tabs li .active,
-.tabs li a:hover,
-.tabs li a:focus {
-    margin: 10px 5px;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    color: grey;
-    border-radius: 10px;
-    height: auto;
-    width: 70%;
-    background-color: yellow;
-
-}
 
 
 @media only screen and (max-width: 600px) {
 
     /* Sign Up */
-   .signup_design {
+    .signup_design {
         margin-top: 30px;
         border-radius: 5px;
-        height: 80vh ;
+        height: 80vh;
         margin-left: 20px;
-       
-       
-    } 
-    .texterror{
-        font-size: 10px;
-        font-weight: bold;
-       margin-bottom: 2px;
+
+
     }
 
- /*    .welcomepage h5 {
+    .texterror {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+
+    /*    .welcomepage h5 {
         margin-top: 20px;
         font-size: 50px;
         font-weight: bold;
@@ -146,4 +128,16 @@
         font-weight: bold;
     }
  */
+
+    .firstnav{
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+    .head h5{
+        display: none;
+    }
+   
 }
