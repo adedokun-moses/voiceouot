@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="newstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li class="head">Blog</li>
+                <li><a href="allpost.html"><i class="fa fa-file awesome"></i>All Post</a></li>
+                <li><a href="adminblog.html"><i class="fa fa-hourglass awesome"></i>Add New Post</a></li>
+
+            </ul>
+
+            <ul>
+                <li class="head">Event</li>
+                <li><a href="eventpost.html"><i class="fa fa-plus awesome"></i>Add New Event</a></li>
+                <li><a href="allevent.html"><i class="fa fa-calendar awesome"></i>All Event</a></li>
+
+            </ul>
+
+            <ul>
+                <li class="head">Forum</li>
+                <li><a href=""><i class="fa fa-plus awesome"></i>Add New Topic</a></li>
+                <li><a href=""><i class="fa fa-folder awesome"></i>All Topics</a></li>
+
+            </ul>
+            <ul>
+                <li class="head">Settings</li>
+                <li><a href="settings.html"><i class="fa fa-cog awesome"></i>Update Settings</a></li>
+                <li><a href="" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
+
+            </ul>
+        </div>
+        <div class="cont">
+            <form >
+                <div class="title">
+                    <input type="text" name="title" placeholder="Add Event Title" id="" class="title">
+                </div>
+
+
+                <textarea id="myTextarea"></textarea>
+
+                <div class="fm">
+                    <div class="font">
+                        <span><a href=""><i class="fa fa-image fa-1x" style="margin-right: 10px;"> </i>Add Featured
+                                Image</a></span>
+                        <span><a href=""><i class="fa fa-camera-retro  fa-1x" style="margin-right: 10px;"></i>Add Featured
+                                Video</a></span>
+                    </div>
+    
+    
+                    <div class="btn">
+                        <input type="submit" value="Publish" class="button">
+                        <input type="submit" value="Preview" class="button2">
+                    </div>
+                </div>
+               
+
+
+
+
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: '#myTextarea',
+        height: 200,
+        theme: 'modern',
+        plugins: [
+            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+            'searchreplace wordcount visualblocks visualchars code fullscreen',
+            'insertdatetime media nonbreaking save table contextmenu directionality',
+            'emoticons template paste textcolor colorpicker textpattern imagetools'
+        ],
+        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar2: 'print preview media | forecolor backcolor emoticons',
+        image_advtab: true
+    });
+</script>
+
+
+
+</html>

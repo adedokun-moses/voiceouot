@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="newstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li class="head">Blog</li>
+                <li><a href="allpost.html"><i class="fa fa-file awesome"></i>All Post</a></li>
+                <li><a href="adminblog.html"><i class="fa fa-hourglass awesome"></i>Add New Post</a></li>
+
+            </ul>
+
+            <ul>
+                <li class="head">Event</li>
+                <li><a href="eventpost.html"><i class="fa fa-plus awesome"></i>Add New Event</a></li>
+                <li><a href="allevent.html"><i class="fa fa-calendar awesome"></i>All Event</a></li>
+
+            </ul>
+
+            <ul>
+                <li class="head">Forum</li>
+                <li><a href=""><i class="fa fa-plus awesome"></i>Add New Topic</a></li>
+                <li><a href=""><i class="fa fa-folder awesome"></i>All Topics</a></li>
+
+            </ul>
+            <ul>
+                <li class="head">Settings</li>
+                <li><a href="settings.html"><i class="fa fa-cog awesome"></i>Update Settings</a></li>
+                <li><a href="" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
+
+            </ul>
+        </div>
+        <div class="cont">
+            <h3>Hi YETUNDE !!!!! <br> <b>Let's Update Your Profile</b></h3>
+
+            <div class="settings_container col-2 col-s-2">
+                <div class="profsettings">
+                    <i class="fa fa-user fa-5x"></i>
+
+                    <a href="profilesetting.html" style="text-decoration: none;"><input type="submit"
+                            value="Edit Profile" name="" id=""></a>
+                </div>
+                <div class="profsettings">
+                    <i class="fa fa-key fa-5x"></i>
+                    <a href="changepassword.html" style="text-decoration: none;"><input type="button"
+                            value="Change Password" name="" id=""></a>
+
+                </div>
+                <div class="profsettings">
+                    <i class="fa fa-question-circle  fa-5x"></i>
+                    <input type="submit" value="Help" name="" id="">
+
+                </div>
+                <div class="profsettings">
+                    <i class="fa fa-phone fa-5x"></i>
+                    <a href="../about.html"> <input type="submit" value="Contact Us" name="" id=""></a>
+
+                </div>
+                <div class="profsettings">
+                    <i class="fa fa-trash fa-5x"></i>
+                    <input type="submit" value="Delete Account" name="" id="">
+                </div>
+                <div class="profsettings">
+                    <i class="fa fa-sign-out fa-5x"></i>
+                    <input type="button" onclick="logOut()" value="Log Out" name="" id="">
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+
+    logOut()
+    function logOut() {
+
+        swal({
+            title: "Are You Sure You Want To Log Out?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    }
+</script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</html>
