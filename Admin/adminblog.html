@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <div class="nav">
+            <h5><a href="admincss.html">HOME</a></h5>
             <ul>
                 <li class="head">Blog</li>
                 <li><a href="allpost.html"><i class="fa fa-file awesome"></i>All Post</a></li>
@@ -41,29 +42,27 @@
             </ul>
         </div>
         <div class="cont">
-            <form >
+            <form>
                 <div class="title">
-                    <input type="text" name="title" placeholder="Add Event Title" id="" class="title">
+                    <input type="text" name="title" placeholder="Add Event Title" id="title" class="title">
                 </div>
-
-
+                
                 <textarea id="myTextarea"></textarea>
 
                 <div class="fm">
                     <div class="font">
-                        <span><a href=""><i class="fa fa-image fa-1x" style="margin-right: 10px;"> </i>Add Featured
-                                Image</a></span>
-                        <span><a href=""><i class="fa fa-camera-retro  fa-1x" style="margin-right: 10px;"></i>Add Featured
-                                Video</a></span>
+                        <button  style="display: block; width: 150px; height: 50px; margin-top: 20px; cursor: pointer; border-radius: 10px;" onclick="document.getElementById('image').click()">Add Image/Video</button>
+                        <input type="file"  id="image" style="display: none;">
+                     
                     </div>
-    
-    
+
+
                     <div class="btn">
-                        <input type="submit" value="Publish" class="button">
+                        <input type="submit" value="Publish" class="button" onclick="postEvent();">
                         <input type="submit" value="Preview" class="button2">
                     </div>
                 </div>
-               
+
 
 
 
@@ -80,6 +79,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
 
 <script type="text/javascript">
+
     tinymce.init({
         selector: '#myTextarea',
         height: 200,
@@ -94,6 +94,33 @@
         toolbar2: 'print preview media | forecolor backcolor emoticons',
         image_advtab: true
     });
+
+
+    var title = document.getElementById('title').value;
+    var myTextarea = document.getElementById('myTextarea').value;
+    var image = document.getElementById('image').value;
+    //var video = document.getElementById('video').value;
+
+    postEvent();
+    function postEvent() {
+        fetch("https://imesiapi.everythingpropagule.com/event/create_event", {
+
+            method: "POST",
+            body: JSON.stringify({
+                title: title,
+                content: myTextarea,
+                banner: image,
+                video: video
+
+            }),
+
+        })
+            .then(response => response.json())
+            .then(json => console.log('working'));
+    } 
+
+
+
 </script>
 
 

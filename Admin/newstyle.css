@@ -18,6 +18,15 @@ body {
     height: 100vh;
 
 }
+.nav h5 a{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
 
 .head {
     font-weight: bold;
@@ -34,7 +43,7 @@ body {
 }
 
 .nav li a {
-    margin-top: 5px;
+    margin-top: 3px;
     padding: 15px 15px;
     display: block;
     color: black;
@@ -47,7 +56,7 @@ body {
 }
 
 .nav li a:hover {
-    margin-top: 5px;
+    margin-top: 3px;
     padding: 15px 15px;
     display: block;
     background: black;
