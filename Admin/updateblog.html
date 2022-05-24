@@ -48,7 +48,7 @@
             </div>
             <form>
                 <div class="title">
-                    <input type="text" name="title" placeholder="Add Event Title" id="title" class="title">
+                    <input type="text"  id="title"   placeholder="Add Event Title" class="title">
                 </div>
 
 
@@ -67,7 +67,7 @@
 
 
                     <div class="btn">
-                        <input type="submit" value="Publish" class="button" onclick="postEvent();">
+                        <input type="submit" value="Update Post" class="button" onclick="postEvent();">
                         <input type="submit" value="Preview" class="button2">
                     </div>
                 </div>
@@ -104,9 +104,9 @@
             image_advtab: true
         });
      */
-
+/* 
     var title = document.getElementById('title').value;
-    var myTextarea = document.getElementById('myTextarea').value;
+    //var myTextarea = document.getElementById('myTextarea').value;
     var image = document.getElementById('image').value;
     var posted = document.getElementById('posted').value;
 
@@ -131,7 +131,7 @@
             .then(response => response.json())
             .then(json => console.log(json));
     }
-
+ */
     var url_string = window.location;
     var url = new URL(url_string)
     var blogid = url.searchParams.get("blogid");
@@ -141,9 +141,8 @@
     function fetchsinglePost() {
         fetch("https://imesiapi.everythingpropagule.com/blog/blog_posts" + blogid).then(
             res => {
-
+               
                 res.json().then(
-
                     data => {
                         let count = 0;
                         if (count < 2) {
@@ -155,8 +154,9 @@
                         }
                         count++
                     }
+
                 )
-              
+
             }
         )
 

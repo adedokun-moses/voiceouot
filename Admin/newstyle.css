@@ -13,9 +13,11 @@ body {
 }
 
 .nav {
-    width: 15%;
-    background-color: white;
+    width: 15%;/* 
+    background-color: orange; */
     height: 100vh;
+    background: linear-gradient(purple,purple,black,purple);
+    color:#fff;
 
 }
 .nav h5 a{
@@ -25,7 +27,8 @@ body {
     font-size: 20px;
     text-align: center;
     text-decoration: none;
-    color: black;
+    /* color: black */;
+    color:#fff;
 }
 
 .head {
@@ -38,6 +41,7 @@ body {
     padding: 0px;
     margin: 0;
     list-style: none;
+    border-bottom: 1px solid #fff;
 
 
 }
@@ -46,25 +50,27 @@ body {
     margin-top: 3px;
     padding: 15px 15px;
     display: block;
-    color: black;
+    color: #fff;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
     margin-left: 10px;
-    width: 70%;
+    width: 100%;
 
 }
 
-.nav li a:hover {
+.nav li a:hover,.nav li .active {
     margin-top: 3px;
     padding: 15px 15px;
     display: block;
-    background: black;
+    background: blueviolet;
     color: white;
-    width: 70%;
+    width: 100%;
     border-radius: 10px;
     margin-left: 10px;
 }
+
+
 
 .awesome {
     margin-right: 10px;
@@ -76,6 +82,7 @@ body {
     background-color: white;
     height: auto;
     overflow: hidden;
+    box-shadow: -1px 5px 3px black;
 
 
 
@@ -87,19 +94,33 @@ body {
     font-size: 20px;
     margin: 7px;
     color: white;
+    
 
 }
 
+.top_head{
+    overflow: auto;
+    background: linear-gradient(to right,rgba(255,255,255,0), rgb(92, 2, 79));
+    box-shadow: 1px 0.5px 5px black;
+}
 
-
+.topsearchbtn{
+    height: 30px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 10px;
+    border-color: black;
+   
+}
 
 
 .container1 {
 
     display: grid;
     grid-template-columns: 70% 30%;
-    grid-template-rows: 230px 380px;
+    grid-template-rows: 200px 350px;
     grid-gap: 0px;
+    clear: both;
 }
 
 .container1>div {
@@ -110,7 +131,7 @@ body {
 }
 
 .first {
-    background: orange;
+    background: purple;
 }
 
 .first h5 {
@@ -119,6 +140,7 @@ body {
     font-weight: bold;
     margin-left: 10px;
     margin-top: 20px;
+    color: white;
 }
 
 .first p {
@@ -127,20 +149,24 @@ body {
     font-weight: bold;
     margin-top: 20px;
     margin-left: 10px;
+    color: white;
 }
 
-.first button {
+.first a {
     width: 20%;
     height: 20%;
     background: blueviolet;
     border-color: blueviolet;
-    margin-top: 20px;
-    margin-left: 10px;
+    padding: 15px 20px;
+    margin: 10px;
     border-radius: 10px;
+    font-size: 13px;
     color: white;
     cursor: pointer;
     font-weight: bold;
+    text-decoration: none;
 }
+
 
 .profile {
     display: block;
@@ -153,23 +179,27 @@ body {
     border-radius: 10px;
     width: 100%;
     height: 30%;
-    box-shadow: 10px 5px  black;
+   
    
   
 }
 
 .prod {
     display: flex;
-    margin: 10px;
+    box-shadow: 2px 2px 3px purple;
+   
 
 
 }
+.prod i{
+    color: purple
+}
 
 .trending {
-    background: green;
+  
     overflow: hidden;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px 4px black;
+    box-shadow: 2px 3px 4px purple;
    
 
 
@@ -177,12 +207,13 @@ body {
 
 .trending h5 {
     float: left;
-    margin: 10px;
+    margin: 5px;
 }
 
 .trending input {
     float: right;
-    margin: 10px;
+    margin: 5
+    px;
 }
 
 .trending table {
@@ -206,14 +237,16 @@ body {
 
 }
 .availableevents{
-    background-color: white;
-    box-shadow: 5px 5px 5px 5px black;
+  
+    box-shadow: 2px 5px 3px purple;
+    background: linear-gradient(purple,purple,black,purple);
 }
 
 
 .availableevents h5{
     margin: 10px;
     font-size: 20px;
+    color: white;
    
 }
 
@@ -229,9 +262,9 @@ body {
 }
 
 .divtxt button{
-    margin: 5px;
-    background: green;
-    border-color: green;
+    margin: 2px;
+    background: blueviolet;
+    border-color: blueviolet;
     border-radius: 10px;
     width: 50%;
     color: white;
@@ -306,7 +339,6 @@ body {
 }
 .title input {
     height: 50px;
-    margin: 10px;
     border-radius: 10px;
 
 
@@ -317,6 +349,15 @@ body {
 }
 
 
+/* PostArea */
+#myTextarea{
+    height: 300px;
+   display: block;
+    margin: auto;
+    width: 90%;
+    margin-top: 10px;
+    
+}
 
 
 .button {
@@ -369,6 +410,7 @@ body {
     padding: 0px 10px;
    
 }
+
 
 /* Post */
 
@@ -560,6 +602,9 @@ td a {
     cursor: pointer;
 
 
+}
+.fontid{
+    font-size: 10px;
 }
 
 

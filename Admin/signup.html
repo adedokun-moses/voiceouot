@@ -60,6 +60,13 @@
                             </div>
 
                             <div class="form-group mt-4">
+                                <input type="text" placeholder="Input Your Phone Number" class="form-control" id="phone"
+                                    required>
+                                <div id="phoneerror"></div>
+                            </div>
+
+
+                            <div class="form-group mt-4">
                                 <input type="password" placeholder="Input Your Password" class="form-control"
                                     id="password">
                                 <div id="passerror"></div>
@@ -90,14 +97,16 @@
     var firstname = document.getElementById("firstname");
     var email = document.getElementById("email");
     var password = document.getElementById("password");
-    var password1 = document.getElementById("password1");
+    var confirm_password = document.getElementById("password1");
+    var phone = document.getElementById("phone");
+    var phoneerror = document.getElementById("phoneerror");
     var surnameerror = document.getElementById("surnameerror");
     var firstnameerror = document.getElementById("firstnameerror");
     var emailerror = document.getElementById("emailerror");
-    var passerror = document.getElementById("passerror");
+    var confirm_password = document.getElementById("passerror");
     var passerror1 = document.getElementById("passerror1");
 
-
+    var message = "Registered Successfully";
 
 
 
@@ -110,6 +119,7 @@
         emailerror.innerHTML = "";
         passerror.innerHTML = "";
         passerror1.innerHTML = "";
+        phoneerror.innerHTML ="";
 
         if (surname.value == "") {
             //alert("Surname Can not be empty")
@@ -134,10 +144,17 @@
             return false;
         }
 
+        if (phone.value == "") {
+            // alert("Surname Can not be empty")
+            phoneerror.innerHTML = "Kindly input your phone number"
+            phoneerror.style.color = "red"
+            return false;
+        }
+
+
         if (password.value == "") {
             // alert("Surname Can not be empty")
             passerror.innerHTML = "Password cannot be empty"
-
             return false;
         } else
 
@@ -145,15 +162,10 @@
             if (password.value.length < 5) {
                 // alert("Surname Can not be empty")
                 passerror.innerHTML = "Password must be more than four character"
-                passerror.style.color= "red"
+                passerror.style.color = "red"
                 return false;
             }
-        /*     if (password1.value = "") {
-                // alert("Surname Can not be empty")
-                passerror1.innerHTML = "Confirm your password "
-                return false;
-            }
-          */
+
         if (password.value != password1.value) {
             // alert("Surname Can not be empty")
             passerror1.innerHTML = "Password must match "
@@ -162,34 +174,40 @@
         }
 
         if (surname.value != "" & password.value != "") {
-            swal({
+          /*   swal({
                 title: "Notice!!!!",
                 text: "This Platform Will Be Updated Soon!",
                 icon: "info",
                 button: "Return To Blog!",
-            });
-            window.location.href = "../index.html"
+            }); */
+            //window.location.href = "../index.html"
         }
 
+        fetch("https://imesiapi.everythingpropagule.com/user/register", {
 
-        fetch("https://imesiapi.everythingpropagule.com/user/register")
-            .then(data => {
-                return data.json();
-            })
+            method: "POST",
+            body: JSON.stringify({
+                firstname: firstname,
+                surname: surname,
+                email: email,
+                password: password,
+                phone: phone,
+                confirm_password: password1
+               
 
-            const cart = {
-                "key": key,
-                "value": value,
 
-            }
+            }),
+            
 
-            .then(post => {
-                // const data = data.value;
-                console.log(data(key,value));
-            });
+        })
+            .then(response => response.json())
+            .then(json => console.log(message));
+
+
 
 
     }
+
 
 
 

@@ -37,11 +37,15 @@
             <ul>
                 <li class="head">Settings</li>
                 <li><a href="settings.html"><i class="fa fa-cog awesome"></i>Update Settings</a></li>
-                <li><a href="" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
+                <li><a href="#" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
 
             </ul>
         </div>
         <div class="cont">
+            <div class="top_head">
+                <input type="text" placeholder="search" class="topsearchbtn" style="float: left;">
+                <i class="fa fa-user fa-2x" style="float: right; margin: 10px; color: white;"></i>
+            </div>
             <div class="eventt">
 
 
@@ -171,19 +175,18 @@
     function logOut() {
         swal({
             title: "Are You Sure You Want To Log Out?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
+           // text: "Once deleted, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: false,
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
+                    location.href="admincss.html"
+                  /*   swal("Poof! Your imaginary file has been deleted!", {
                         icon: "success",
-                    });
-                } else {
-                    swal("Your imaginary file is safe!");
-                }
+                    }); */
+                } 
             });
     }
 </script>

@@ -16,7 +16,7 @@
             <h5><a href="admincss.html">HOME</a></h5>
             <ul>
                 <li class="head">Blog</li>
-                <li><a href="allpost.html"><i class="fa fa-file awesome"></i>All Post</a></li>
+                <li><a href="allpost.html" class="active"><i class="fa fa-file awesome"></i>All Post</a></li>
                 <li><a href="adminblog.html"><i class="fa fa-hourglass awesome"></i>Add New Post</a></li>
 
             </ul>
@@ -37,20 +37,28 @@
             <ul>
                 <li class="head">Settings</li>
                 <li><a href="settings.html"><i class="fa fa-cog awesome"></i>Update Settings</a></li>
-                <li><a href="" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
+                <li><a href="#" onclick="logOut()"><i class="fa fa-sign-out awesome"></i>Log Out</a></li>
 
             </ul>
         </div>
         <div class="cont">
 
+            <div class="top_head">
+                <input type="text" placeholder="search" class="topsearchbtn" style="float: left;">
+                <i class="fa fa-user fa-2x" style="float: right; margin: 10px; color: white;"></i>
+            </div>
+
             <div class="container1">
+
                 <div class="first">
 
-                    <h5>Hello Tunde!!</h5>
+
+                    <h5>Hello Adedokun!!</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Provident labore ratione
                         asperiores distinctio!</p>
 
-                    <button>Write New Post </button>
+                    <a href="adminblog.html">Write New Post </a>
+
 
 
 
@@ -67,7 +75,7 @@
                     </div>
                     <div class="prod">
                         <div>
-                            <h5><i class="fa fa-bell fa-2x"></i></h5>
+                            <h5><i class="fa fa-user fa-2x"></i></h5>
                         </div>
                         <div>
                             <h5> 322 <br> Total Connetions </h5>
@@ -75,7 +83,7 @@
                     </div>
                     <div class="prod">
                         <div>
-                            <h5><i class="fa fa-bell fa-2x"></i></h5>
+                            <h5><i class="fa fa-book fa-2x"></i></h5>
                         </div>
                         <div>
                             <h5> 322 <br> Total Posts</h5>
@@ -85,64 +93,11 @@
                 </div>
                 <div class="trending">
                     <h5>Top Articles </h5>
-                    <input type="date">
-
+                    <!--   <input type="date">
+ -->
                     <table>
-                        <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                    aperiam
-                                    necessitatibus
-                                    <br> Jan, 13 2020
-                                </td>
-                                <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                                <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                    aperiam
-                                    necessitatibus
-                                    <br> Jan, 13 2020
-                                </td>
-                                <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                                <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                    aperiam
-                                    necessitatibus
-                                    <br> Jan, 13 2020
-                                </td>
-                                <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                                <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                                <td>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                    aperiam
-                                    necessitatibus
-                                    <br> Jan, 13 2020
-                                </td>
-                                <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                                <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-
-                            </tr>
-
-
+                        <tbody id="toparticle">
+                          
                         </tbody>
 
                     </table>
@@ -151,58 +106,100 @@
                 </div>
                 <div class="availableevents">
                     <h5> Available Events</h5>
-                    <div class="divtxt">
-                        <h5>UEFA Champions League</h5>
-                        <button>Attend Event</button>
+
+
+                    <div id="eventpost">
+
                     </div>
-                    <div class="divtxt">
-                        <h5>UEFA Champions League</h5>
-                        <button>Attend Event</button>
-                    </div>
-                    <div class="divtxt">
-                        <h5>UEFA Champions League</h5>
-                        <button>Attend Event</button>
-                    </div>
-                    <div class="divtxt">
-                        <h5>Ijewuru day</h5>
-                        <button>Attend Event</button>
-                    </div>
-                    <div class="divtxt">
-                        <h5>Olamide Live In Lagos</h5>
-                        <button>Attend Event</button>
-                    </div>
-                    <div class="divtxt">
-                        <h5>Davido and Burna Boy In Naija</h5>
-                        <button>Attend Event</button>
-                    </div>
+
                 </div>
+
+
 
             </div>
 
-
-
         </div>
-
-    </div>
 </body>
 
 <script>
 
+    blogp();
+    function blogp() {
+        fetch("https://imesiapi.everythingpropagule.com/blog/blog_posts").then(
+            (res) => {
+                res.json().then((data) => {
+                    console.log(data);
+                    if (data.length > 0) {
+                        var blogp = "";
+                        let count = 0;
+                        data.forEach((itemData) => {
+                            if (count < 4) {
+                                blogp += "<tr>"
+                                blogp += "<td >" + data[count]["id"] + "</td>"
+                                blogp += "<td><img  class='trendimage' src ='https://" + data[count]["banner"] + "'></td>"
+                                blogp += "<td><a href =''>" + data[count]["content"].substring(0, 100) + "</a></td>"
+                                blogp += "</tr>"
+                            }
+                            count++
+                        });
+
+                    }
+                    document.getElementById("toparticle").innerHTML = blogp;
+
+                });
+            }
+        );
+
+
+    }
+
+    attendEvent()
+    function attendEvent() {
+        fetch("https://imesiapi.everythingpropagule.com/event/events").then(
+            (res) => {
+                res.json().then((data) => {
+                    console.log(data)
+
+                    if (data.length > 0) {
+                        var postevent = "";
+                        let count = 0;
+
+                        data.forEach((itemData) => {
+                            if (count < 4) {
+                                postevent += "<div class='divtxt'>"
+                                postevent += "<h5>" + data[count]["title"] + "</h5>"
+                                postevent += "<button> Attend Event </button>"
+                                postevent += "</div>"
+
+                            }
+                            count++
+                        });
+
+                        
+                    }
+                    document.getElementById("eventpost").innerHTML = postevent;
+                })
+
+            }
+
+
+        )
+    }
+
     function logOut() {
         swal({
             title: "Are You Sure You Want To Log Out?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
+            // text: "Once deleted, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: false,
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Your imaginary file is safe!");
+                    location.href = "../index.html"
+                    /*   swal("Poof! Your imaginary file has been deleted!", {
+                          icon: "success",
+                      }); */
                 }
             });
     }
@@ -210,6 +207,7 @@
 
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 
 </html>
