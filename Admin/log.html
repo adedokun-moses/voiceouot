@@ -15,21 +15,21 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="col-sm-4 bg-warning logcontainer mx-auto ">
-                <form class=" mt-3">
+                <form class=" mt-3" id="form">
                     <h5><b>Sign In</b></h5>
                     <p>Stay Informed!</p>
                     <div class="form-group mt-4">
-                        <input type="text" placeholder="Input Your User Name" class="form-control" id="username">
+                        <input type="email" placeholder="Input Your User Name" class="form-control" id="username" name="email">
                         <div id="usererror"></div>
 
                     </div>
 
                     <div class="form-group mt-4">
-                        <input type="password" placeholder="Input Your Password" class="form-control" id="password">
+                        <input type="password" placeholder="Input Your Password" class="form-control" id="password" name="password">
                         <div id="passerror"></div>
                     </div>
 
-                    <input type="submit" value="Sign In" onclick="userLogin(), event.preventDefault()"
+                    <input type="button" value="Sign In" onclick="userLogin(), event.preventDefault()"
                         class="btn btn-success form-control">
                     <p class="text-center mt-4"><a href="">Forgot password?</a></p>
 
@@ -42,54 +42,69 @@
 </body>
 
 <script>
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
-    var usererror = document.getElementById("usererror");
-    var passerror = document.getElementById("passerror");
+    const form = document.getElementById("form");
+     var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      var usererror = document.getElementById("usererror");
+      var passerror = document.getElementById("passerror"); 
 
+    userLogin();
     function userLogin() {
+        
+              
+                usererror.innerHTML = "";
+                passerror.innerHTML = "";
+        
+                if (username.value == "") {
+                    //alert("Surname Can not be empty")
+                    usererror.innerHTML = "Username cannot be empty"
+                    usererror.style.color = "red";
+                    return false;
+                }
+        
+        
+                if (password.value == "") {
+                    // alert("Surname Can not be empty")
+                    passerror.innerHTML = "Password cannot be empty"
+                    passerror.style.color = "red"
+                    return false;
+                }
+        
+                if (password.value.length < 5) {
+                    // alert("Surname Can not be empty")
+                    passerror.innerHTML = "Password must be greater than five character "
+                    passerror.style.color = "red"
+                    return false;
+                }
+        
+             /*    if (username.value != "" & password.value != "") {
+                    swal({
+                        title: "Welcome",
+                        text: "Log In Successful!",
+                        icon: "info",
+                       // button: "Return To Blog!",
+                    });
+                   // window.location.href = "admincss.html" 
+                } */
+        
+        
+        //var form = document.getElementById('form');
+          let formData = new FormData(form);
+          console.log(formData);
 
+        fetch("https://imesiapi.everythingpropagule.com/user/login",{
 
-        username.innerHTML = "";
-        usererror.innerHTML = "";
-        password.innerHTML = "";
-        passerror.innerHTML = "";
-
-        if (username.value == "") {
-            //alert("Surname Can not be empty")
-            usererror.innerHTML = "Username cannot be empty"
-            usererror.style.color = "red";
-            return false;
-        }
-
-
-        if (password.value == "") {
-            // alert("Surname Can not be empty")
-            passerror.innerHTML = "Password cannot be empty"
-            passerror.style.color = "red"
-            return false;
-        }
-
-        if (password.value.length < 5) {
-            // alert("Surname Can not be empty")
-            passerror.innerHTML = "Password must be greater than five character "
-            passerror.style.color = "red"
-            return false;
-        }
-
-
-        if (username.value != "" & password.value != "") {
-            swal({
-                title: "Notice!!!!",
-                text: "This Platform Will Be Updated Soon!",
-                icon: "info",
-                button: "Return To Blog!",
-            });
-            window.location.href = "../index.html"
-        }
+            method: "POST",
+            body:formData
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err));
 
 
     }
+
+
 
 
 
@@ -99,11 +114,9 @@
 
 
 
-
-<script src="bootstrp4/bootstrap.min.js"></script>
 <script src="bootstrp4/jquery.min.js"></script>
+<script src="bootstrp4/bootstrap.min.js"></script>
 <script src="bootstrp4/popper.min.js"></script>
-<script src="blognews.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </html>

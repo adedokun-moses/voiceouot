@@ -58,8 +58,18 @@ body {
     width: 100%;
 
 }
+/* .nav li a .active {
+    margin-top: 3px;
+    padding: 15px 15px;
+    display: block;
+    background: blueviolet;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 10px;
+} */
 
-.nav li a:hover,.nav li .active {
+.nav li a:hover,.nav li .active, .nav li a:focus {
     margin-top: 3px;
     padding: 15px 15px;
     display: block;
@@ -612,6 +622,7 @@ td a {
     body {
         margin: 0px;
         padding: 0px;
+        position: relative;
     }
 
     .head {

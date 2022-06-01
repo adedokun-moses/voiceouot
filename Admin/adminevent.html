@@ -46,10 +46,10 @@
                 <input type="text" placeholder="search" class="topsearchbtn" style="float: left;">
                 <i class="fa fa-user fa-2x" style="float: right; margin: 10px; color: white;"></i>
             </div>
-            <form id="form">
+            <form>
                 <div class="title">
                     <input type="text" value="title" id="title" class="title" placeholder="title">
-                    <!--  <textarea name="" id="" cols="10" rows="10"></textarea> -->
+                   <!--  <textarea name="" id="" cols="10" rows="10"></textarea> -->
                 </div>
 
 
@@ -68,9 +68,8 @@
 
 
                     <div class="btn">
-                        <input type="submit" value="Publish" class="button" onsubmit="postEvent(); event.preventDefault(); ">
+                        <input type="submit" value="Publish" class="button" onclick="postEvent();">
                         <input type="submit" value="Preview" class="button2">
-                  
                     </div>
                 </div>
 
@@ -107,98 +106,65 @@
         });
      */
 
-/* 
-    postEvent();
-    function postEvent(){
-        // console.log(title)
-        var formData = new formData();
+    /*  var title = document.getElementById('title').value;
+     var myTextarea = document.getElementById('myTextarea').value;
+     var image = document.getElementById('image').value;
+     var posted = document.getElementById('posted').value;
+     var video = document.getElementById('video').value; */
 
-        var title = document.getElementById('title').value;
-        var myTextarea = document.getElementById('myTextarea').value;
-        var image = document.getElementById('image').value;
-        var posted = document.getElementById('posted').value;
-        var video = document.getElementById('video').value;
-       
-     
-       // alert(title);
-      //  alert(myTextarea)
-       formData.append("title", title);
-       formData.append("content", content);
-       formData.append("banner", banner);
-       formData.append("posted_by", "Moses");
-       
-
+ /*    postEvent();
+    function postEvent() {
+        console.log(title)
         fetch("https://imesiapi.everythingpropagule.com/blog/create_blog", {
-            
+
             method: "POST",
-            body: formData
-             body: JSON.stringify({
-                title: "My First Post",
-                content: "We started the post here",
-                banner: "",
-                posted_by: "Moses",
-                video: ""
-              
+            body: JSON.stringify({
+                title: title,
+                content: myTextarea,
+                banner: image,
+                posted_by: posted,
+                video: video
 
             }),
-          
 
         })
             .then(response => response.json())
-            .then( result => {
-                (console.log('success:', result));
-            })
-
-            .catch(error => {
-                console.log('error', error);
-
-            });
+            .then(json => console.log(json));
     }
-
-/* 
-    const form = document.getElementById('form');
-    
-    form.addEventListener('submit', function(){
-        e.preventDefault();
-
+ */
+    var url_string = window.location;
+    var url = new URL(url_string)
+    var post_id = url.searchParams.get("post_id");
+    //alert(post_id);
 
 
-    }) */
-    /* 
-    
-        var url_string = window.location;
-        var url = new URL(url_string)
-        var post_id = url.searchParams.get("post_id");
-        //alert(post_id);
-    
-    
-    
-        function fetchsinglePost() {
-            
-            fetch ("https://imesiapi.everythingpropagule.com/blog/single_blog_post?post_id=" + post_id).then(
-                res => {
-    
-                    res.json().then(
-                      
-                        data => {
-                         let count = 0;
-                            console.log(data);
-                            document.getElementById('title').value = (data[count]["title"]);
-                            document.getElementById('myTextarea').innerHTML = (data[count]["content"]);
-                           count++
-    
-    
-                        }
-                     
-                    )
-    
-                }
-            )
-    
-    
-        }
-        fetchsinglePost();
-     */
+
+    function fetchsinglePost() {
+        
+        fetch ("https://imesiapi.everythingpropagule.com/event/single_event?event_id=" + post_id).then(
+            res => {
+
+                res.json().then(
+                  
+                    data => {
+                     let count = 0;
+                        console.log(data);
+                        document.getElementById('title').value = (data[count]["title"]);
+                        document.getElementById('myTextarea').innerHTML = (data[count]["content"]);
+                       count++
+
+
+                    }
+                 
+                )
+
+            }
+        )
+
+
+    }
+    fetchsinglePost();
+
 
 
 </script>

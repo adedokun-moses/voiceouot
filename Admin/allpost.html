@@ -16,7 +16,7 @@
             <h5><a href="admincss.html">HOME</a></h5>
             <ul>
                 <li class="head">Blog</li>
-                <li><a href="allpost.html"><i class="fa fa-file awesome"></i>All Post</a></li>
+                <li><a href="allpost.html" class="active"><i class="fa fa-file awesome"></i>All Post</a></li>
                 <li><a href="adminblog.html"><i class="fa fa-hourglass awesome"></i>Add New Post</a></li>
 
             </ul>
@@ -47,7 +47,7 @@
                 <i class="fa fa-user fa-2x" style="float: right; margin: 10px; color: white;"></i>
             </div>
             <div class="eventt">
-                <table id="allpost" >
+                <table id="allpost">
 
                     <thead style="color: white;">
                         <tr>
@@ -105,17 +105,18 @@
                     if (data.length > 0) {
                         var blogp = "";
                         let count = 0;
+                        // let newcount = 1;
                         data.forEach((itemData) => {
                             if (count < 6) {
                                 blogp += "<tr>"
-                                blogp += "<td id ='postid'>" + data[count]["id"] + "</td>"
+                                blogp += "<td id ='postid'>" + count + "</td>"
                                 blogp += "<td><img  class='trendimage' id ='postimage' src ='https://" + data[count]["banner"] + "'></td>"
-                                blogp += "<td id ='postcontent'><a href ='adminblog.html?blogid='  >" + data[count]["content"].substring(0, 100) + "</a></td>"
-                                blogp += "<td><a href ='updateblog.html?blogid='>Update Post   </a></td>"
-                                blogp += "<td><a href ='' onclick= 'deletepost();''>Delete Post </a></td>"
-
+                                blogp += "<td id ='postcontent'><a href ='adminblog.html?post_id=" + data[count]["id"] + "'>" + data[count]["content"].substring(0, 200) + "</a></td>"
+                                blogp += "<td><a href ='updateblog.html?post_id=" + data[count]["id"] + "'> Update Post  </a></td>"
+                                blogp += "<td><a href ='' onclick= 'deletepost();'>Delete Post </a></td>"
                                 blogp += "</tr>"
                             }
+                            //   newcount++
                             count++
                         });
 
@@ -125,44 +126,57 @@
                 });
             }
         );
-    }   
-
-    function postDetails(){
-
     }
-    function resetForm() {
-        document.getElementById("postimage").value = "";
-        document.getElementById("postid").value = "";
-        document.getElementById("postcontent").value = "";
-        selectedRow = null;
-    }
+    
 
-    function onEdit(td) {
-        selectedRow = td.parentElement.parentElement;
-        document.getElementById("fname").value = selectedRow.cells[0].innerHTML;
-        document.getElementById("emp").value = selectedRow.cells[1].innerHTML;
-        document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
-        document.getElementById("city").value = selectedRow.cells[3].innerHTML;
-    }
+    function deletepost(){
+        
+        //id = document.getElementById('id').innerHTML;
+        content = document.getElementById('postcontent').innerHTML;
+        banner = document.getElementById ('postimage').src;
 
-
-    function updateForm(formData) {
-        selectedRow.cells[0].innerHTML = formData.fname;
-        selectedRow.cells[1].innerHTML = formData.emp;
-        selectedRow.cells[2].innerHTML = formData.salary;
-        selectedRow.cells[3].innerHTML = formData.city;
-    }
-
-    function deletepost(td) {
+        const blog = {
+           //"id": id,
+            "postimage": banner,
+            "postcontent": content
+        }
+      
         if (confirm('Are you sure you want to delete?')) {
-            row = td.parentElement.parentElement;
-            document.getElementById("allpost").deleteRow(row.rowIndex);
+            alert(blog)
+            //row = td.parentElement.parentElement;
+           // (itemid, JSON.stringify(blog));
+            document.getElementById("allarticles").remove(blog);
+
+            // document.getElementById("allarticles").deleteRow(row.rowIndex);
             //resetForm();
         }
-
     }
 
 
+    /*   function resetForm() {
+          document.getElementById("postimage").value = "";
+          document.getElementById("postid").value = "";
+          document.getElementById("postcontent").value = "";
+          selectedRow = null;
+      }
+  
+      function onEdit(td) {
+          selectedRow = td.parentElement.parentElement;
+          document.getElementById("fname").value = selectedRow.cells[0].innerHTML;
+          document.getElementById("emp").value = selectedRow.cells[1].innerHTML;
+          document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
+          document.getElementById("city").value = selectedRow.cells[3].innerHTML;
+      }
+  
+  
+      function updateForm(formData) {
+          selectedRow.cells[0].innerHTML = formData.fname;
+          selectedRow.cells[1].innerHTML = formData.emp;
+          selectedRow.cells[2].innerHTML = formData.salary;
+          selectedRow.cells[3].innerHTML = formData.city;
+      }
+  
+   */
 
 
 

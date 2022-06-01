@@ -24,7 +24,7 @@
             <ul>
                 <li class="head">Event</li>
                 <li><a href="eventpost.html"><i class="fa fa-plus awesome"></i>Add New Event</a></li>
-                <li><a href="allevent.html"><i class="fa fa-calendar awesome"></i>All Event</a></li>
+                <li><a href="allevent.html" class="active"><i class="fa fa-calendar awesome"></i>All Event</a></li>
 
             </ul>
 
@@ -51,142 +51,104 @@
 
 
                 <table>
-    
-                    <thead style="color: white;">
-                        <tr>
-                            <th>S/N</th>
-                            <th> Image</th>
-                            <th>Content</th>
-                            <th>Total Views</th>
-                            <th>Total Likes</th>
-    
-                        </tr>
-                    </thead>
-                    <tbody style="color: white">
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
-    
-    
-    
-                        </tr>
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
+
+                    <table id="allpost">
+
+                        <thead style="color: white;">
+                            <tr>
+                                <th>S/N</th>
+                                <th> Image</th>
+                                <th>Content</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="allarticles">
+
+
+                            <!--     <tr>
+                                <td>01</td>
+                                <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
+                                <td>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
+                                    aperiam
+                                    necessitatibus
+                                    <br> Jan, 13 2020
+                                </td>
+                                <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
+                                <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
+                                <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update
+                                                Post</span></i><a href=""></a></td>
+                                <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post
+                                            </span></i></a></td>
     
     
-                        </tr>
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
-    
-    
-                        </tr>
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
-    
-                        </tr>
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
-    
-    
-                        </tr>
-    
-                        <tr>
-                            <td>01</td>
-                            <td><img src="./image/img.jpg" alt="image" class="trendimage"></td>
-                            <td>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit. Sapiente ipsam
-                                aperiam
-                                necessitatibus
-                                <br> Jan, 13 2020
-                            </td>
-                            <td><i class="fa fa-eye"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><i class="fa fa-thumbs-up"><span style="margin-left: 10px;">6.5K</span></i></td>
-                            <td><a href=""><i class="fa fa-update"><span style="margin-left: 10px;">Update Post</span></i><a href=""></a></td>
-                            <td><a href=""><i class="fa fa-delete"><span style="margin-left: 10px;">Delete Post </span></i></a></td>
-    
-                        </tr>
-    
-                    </tbody>
-    
+                            </tr>
+                          -->
+
+
+
+                        </tbody>
+
+                    </table>
                 </table>
             </div>
         </div>
-       
+
 
     </div>
 </body>
 
 <script>
 
+blogp();
+    function blogp() {
+        fetch("https://imesiapi.everythingpropagule.com/event/events").then(
+            (res) => {
+                res.json().then((data) => {
+                    console.log(data);
+
+                    if (data.length > 0) {
+                        var blogp = "";
+                        let count = 0;
+                        // let newcount = 1;
+                        data.forEach((itemData) => {
+                            if (count < 4) {
+                                blogp += "<tr>"
+                                blogp += "<td id ='postid'>" + count + "</td>"
+                                blogp += "<td><img  class='trendimage' id ='postimage' src ='https://" + data[count]["banner"] + "'></td>"
+                                blogp += "<td id ='postcontent'><a href ='adminblog.html?post_id=" + data[count]["id"] + "'>" + data[count]["content"].substring(0, 200) + "</a></td>"
+                                blogp += "<td><a href ='updateblog.html?post_id=" + data[count]["id"] + "'> Update Post  </a></td>"
+                                blogp += "<td><a href ='' onclick= 'deletepost();'>Delete Post </a></td>"
+                                blogp += "</tr>"
+                            }
+                            //   newcount++
+                            count++
+                        });
+
+                    }
+                    document.getElementById("allarticles").innerHTML = blogp;
+
+                });
+            }
+        );
+    }
+    
+
     function logOut() {
         swal({
             title: "Are You Sure You Want To Log Out?",
-           // text: "Once deleted, you will not be able to recover this imaginary file!",
+            // text: "Once deleted, you will not be able to recover this imaginary file!",
             icon: "warning",
             buttons: true,
             dangerMode: false,
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    location.href="admincss.html"
-                  /*   swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                    }); */
-                } 
+                    location.href = "admincss.html"
+                    /*   swal("Poof! Your imaginary file has been deleted!", {
+                          icon: "success",
+                      }); */
+                }
             });
     }
 </script>
