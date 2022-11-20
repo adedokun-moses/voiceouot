@@ -17,9 +17,9 @@
     margin-left: 500px;
 }
 
-.new_flex  h3{
+.new_flex h3 {
     font-size: 10px;
-   
+
 }
 
 .break a {
@@ -98,8 +98,8 @@ Forum  */
     width: 100%;
 
 }
-.img_blog1{
-    height: 100px;
+
+.img_blog1 {
     width: 100%;
 }
 
@@ -210,9 +210,9 @@ Forum  */
 
 .head_text {
     font-size: 15px;
-   /*  margin-top: 10px; */
+    /*  margin-top: 10px; */
     color: black;
-   
+
 
 }
 
@@ -220,13 +220,16 @@ Forum  */
     width: 100%;
     height: 150px;
 }
-
+/* 
 .cont {
 
     width: 100%;
-
-
+    border-radius: 10px;
+} */
+.cont a{
+    text-decoration: none;
 }
+
 
 .content {
     font-size: 13px;
@@ -264,7 +267,7 @@ Forum  */
 @media only screen and (max-width: 600px) {
     .pad {
         padding: 15px;
-     
+
     }
 
     .top_image a {
@@ -332,4 +335,6 @@ Forum  */
     .content {
         display: none;
     }
+
+
 }

@@ -144,13 +144,14 @@
         if (confirm('Are you sure you want to delete?')) {
             alert(blog)
             //row = td.parentElement.parentElement;
-           // (itemid, JSON.stringify(blog));
+            (itemid, JSON.stringify(blog));
             document.getElementById("allarticles").remove(blog);
 
             // document.getElementById("allarticles").deleteRow(row.rowIndex);
             //resetForm();
         }
     }
+    console.log(deletepost());
 
 
     /*   function resetForm() {
