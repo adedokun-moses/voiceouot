@@ -27,12 +27,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ">
-                <li class="nav-item  ">
-                    <a href="#./Admin/signup.html" class="btn text-white btn-warning ">Join The Forum: Sign Up Here</a>
-
-                </li>
-            </ul>
 
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item ">
@@ -76,76 +70,6 @@
             </div>
 
         </div>
-
-      <!--   <div class="row">
-            <div class="col-sm-12 job_heading mt-5   ">
-                <h5>Latest Job Oppotuinites</h5>
-
-                <div class="row">
-                    <div class="col-sm-3 col-6 mt-2 job">
-                        <img src="./image/logo11.jpg" style="height: 150px; width: 100%;" alt="">
-
-                        <h3> <b>Customer Care</b><br></h3>
-                        <h4 class="mt-2 ">
-
-                            One of the biggest telecommunication company in the country is seeking to
-                            employ qaulified candidates for the role of Customer
-                        </h4>
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-success mx-auto mt-3 ">Apply
-                            Now</button>
-
-
-                    </div>
-
-                    <div class="col-sm-3 col-6 mt-2 job">
-                        <img src="./image/job.jpg" style="height: 150px; width: 100%;" alt="">
-                        <div style="height: 200px;">
-                            <h3> <b>Football Coach</b><br></h3>
-                            <h4 class="mt-2 ">
-
-                                One of the biggest football club in the country is seeking to
-                                employ qaulifeied candidate for the role of First Team Coach.
-                            </h4>
-                            <button data-toggle="modal" data-target="#myModal"
-                                class="btn btn-success mx-auto mt-3 ">Apply
-                                Now</button>
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-sm-3 col-6 mt-2 job ">
-                        <img src="./image/job1.jpg" style="height: 150px; width: 100%;" alt="">
-                        <h3> <b>Front End Developer</b><br></h3>
-                        <h4 class="mt-2 ">
-
-                            One of the biggest telecommunication company in the country, MTN, is seeking to
-                            employ qaulifeied candidates for the role of Developer
-                        </h4>
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-success mx-auto mt-3 ">Apply
-                            Now</button>
-                    </div>
-
-
-                    <div class="col-sm-3 col-6 mt-2 job ">
-                        <img src="./image/lady2.jpg" style="height: 150px; width: 100%;" alt="">
-                        <h3> <b>Customer Care </b><br></h3>
-                        <h4 class="mt-2 ">
-
-                            One of the biggest telecommunication company in the country, MTN, is seeking to
-                            employ qaulifeied candidates for the role of Customer Care
-                        </h4>
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-success mx-auto mt-3 ">Apply
-                            Now</button>
-
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
- -->
 
         <div class="col-sm-8 mt-5 mx-auto">
             <div class="pagination">
@@ -208,9 +132,7 @@
     </footer>
 
 
-    <!--     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Open modal
-        </button> -->
+
 
     <!-- The Modal -->
     <div class="modal" id="myModal">
@@ -304,22 +226,22 @@
         fetch("https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news").then(
             (res) => {
                 res.json().then((data) => {
-                   // data = data.slice(0, 9);                 
-                         blogp = "";
+                    // data = data.slice(0, 9);                 
+                    blogp = "";
 
-                        data.forEach((itemData) => {
-                            blogp += "<div class='col-sm-4 mt-5 new_flex cont'>"
-                            blogp += "<a href ='getblog.html?id=" + itemData.id + "'>"
-                            blogp += "<div class='p-1'><div ><img class='img_blog1' src='" + itemData.avatar + "'></div></div>";
-                            blogp += "<h4 class='head_text'>" + itemData.author + "</h4>";
-                            blogp += "<h5 class=' content  '>" + itemData.title.substring(0, 100) + "</h5>";
-                            blogp += "</a>"
-                            blogp += "<button class='btn btn-success'><a href ='edit.html?id=" + itemData.id + "'>Edit</a></button>";
-                            blogp += "<button class='btn btn-danger ml-3' onclick='deletePOST()'> Delete</button>";
-                            blogp += "</div>";
+                    data.forEach((itemData) => {
+                        blogp += "<div class='col-sm-4 mt-5 new_flex cont' id='del" + itemData.id + "'>"
+                        blogp += "<a href ='getblog.html?id=" + itemData.id + "'>"
+                        blogp += "<div class='p-1'><div ><img class='img_blog1' src='" + itemData.avatar + "'></div></div>";
+                        blogp += "<h4 class='head_text'>" + itemData.author + "</h4>";
+                        blogp += "<h5 class=' content  '>" + itemData.title.substring(0, 100) + "</h5>";
+                        blogp += "</a>"
+                        blogp += "<button class='btn btn-success'><a href ='edit.html?id=" + itemData.id + "'>Edit</a></button>";
+                        blogp += "<button class='btn btn-danger ml-3' onclick='deletePOST(" + itemData.id + ")'> Delete</button>";
+                        blogp += "</div>";
 
-                        });
-                    
+                    });
+
                     document.getElementById("section").innerHTML = blogp;
 
                 });
@@ -333,66 +255,48 @@
         let author = document.getElementById('author').value
         let content = document.getElementById('content').value
         let image = document.getElementById('image').src
-        fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/', {
-            method: 'POST',
-            headers: {
-             'Accept': 'application/json',
-            },
-            body: JSON.stringify({
-                title: title,
-                author: author,
-                content: content,
-                image: image
-            }),
-        }).then(function (response) {
-          //  return response.json()
-            console.log(response)
-            location.replace("index.html");
-        }).catch(error => console.error('Error:', error));
+
+        if (title == "" || author == "") {
+            alert("All Field Must Be Filled")
+        } else {
+            fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    title: title,
+                    author: author,
+                    content: content,
+                    image: image
+                }),
+            }).then(function (response) {
+                alert("Post Added")
+                location.replace("index.html");
+            }).catch(error => console.error('Error:', error));
+        }
+
+
     }
-/*     var url_string = window.location;
-    var url = new URL(url_string) */
-  //  var id = url.searchParams.get("id");
 
 
-    function deletePOST() {
+    function deletePOST(id) {
+        let del = 'del' + id
         fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
             },
-            /*    body: JSON.stringify({
-                   name: author,
-                   body: author_body,
-   
-               }), */
         })
             .then(function (response) {
-               // return response.json()
-               console.log(response)
+                document.getElementById(del).style.display = 'none';
+                console.log(response)
+
             })
             .catch(error => console.error('Error:', error));
-
     }
 
-  
-    // Initial API Call
-/* fetchData('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news?page=1&limit=10');
 
-// Create the function for API Call 
-function fetchData(apiUrl){ 
-  fetch(apiUrl)
-    .then(res=>res.json())
-    .then(data => {
-    //  console.log(data);
-      apiUrl = data['next_page'];
-      // Check next API url is empty or not, if not empty call the above function 
-      if(apiUrl != '' && apiUrl != null){
-          fetchData(apiUrl);
-      }
-  })
-}
- */
 
 
 

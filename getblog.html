@@ -27,13 +27,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ">
-                <li class="nav-item  ">
-                    <a href="#./Admin/signup.html" class="btn text-white btn-warning ">Join The Forum: Sign Up Here</a>
-
-                </li>
-            </ul>
-
+          
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item ">
                     <a href="index.html" class="nav-link text-white">Home</a>
@@ -45,12 +39,7 @@
             </ul>
 
 
-            <ul class="navbar-nav ">
-                <li class="nav-item  ">
-                    <a onclick="job()" class="btn text-white btn-success ">Add NEWS</a>
 
-                </li>
-            </ul>
         </div>
 
 
@@ -75,19 +64,15 @@
                     </div>
                     <div class="col-sm-4">
                         <h5>Latest Comment </h5>
-                        <div class="recent_comment">
-                            <div class="image_tab" style="flex-basis: 30%;">
-                                <img src="" id="author_image" alt="">
-                                <h5 id="name" style="font-size: 12px; text-align: center;"></h5>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="recent_comment" id="commentts">
+
+
+                                </div>
                             </div>
-                            <div class="comment ml-3" style="flex-basis: 60%;">
-                                <h5 id="autho_comment"></h5>
-                            </div>
-
-                            <button class="btn btn-danger"  onclick="event.preventDefault(); deleteComment()">Delete</button>
-
-
                         </div>
+
                     </div>
                 </div>
 
@@ -170,9 +155,7 @@
     </footer>
 
 
-    <!--     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Open modal
-        </button> -->
+
 
     <!-- The Modal -->
     <div class="modal" id="myModal">
@@ -216,9 +199,9 @@
         width: 100%;
     }
 
-    .recent_comment {
-        display: flex;
-        align-items: center;
+    .img_blog2 {
+        width: 100%;
+
     }
 </style>
 
@@ -254,10 +237,18 @@
         fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id + '/comments',).then(
             (res) => {
                 res.json().then((data) => {
-                    console.log(data);
-                    document.getElementById('name').innerHTML = (data[0].name);
-                    document.getElementById('autho_comment').innerHTML = (data[0].comment);
-                    document.getElementById('author_image').src = (data[0].avatar);
+                    commentpost = "";
+                    data.forEach(element => {
+                        commentpost += "<div class='col-sm-12 d-flex mt-1 align-items-center'>"
+                        commentpost += "<h4 class='head_text'>" + element.name + "</h4>";
+                        commentpost += "<h4 class='head_text'>" + element.comment + "</h4>";
+                        commentpost += "<div class='p-1'><div ><img class='img_blog2' src='" + element.avatar + "'></div></div>";
+                        commentpost += "<button class='btn btn-danger' onclick ='event.preventDefault(); deleteComment(" + element.id + ")'> Delete</button > "
+
+                        commentpost += "</div>";
+
+                    });
+                    document.getElementById("commentts").innerHTML = commentpost;
 
 
                 });
@@ -269,51 +260,40 @@
     function addComment() {
         let author_body = document.getElementById('text_content').value
         let author = document.getElementById('author_name').value
-      //  let id = id
-        // alert('home')
-        fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id + '/comments', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify({
-                name: author,
-                body: author_body,
-                id: id
-
-            }),
-        })
-            .then(function (response) {
-                return response.json()
-            })
-            .then(function (data) {
-                console.log(data)
+        if (author == "" || author_body == "") {
+            alert("All Field Must Be Filled")
+        } else {
+            fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id + '/comments', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: author,
+                    body: author_body,
+                    id: id
+                }),
+            }).then(function (data) {
+                location.reload()
                 title = document.getElementById("name")
                 body = document.getElementById("autho_comment")
                 title.innerHTML = data.title
                 body.innerHTML = data.body
-            }).catch(error => console.error('Error:', error));
 
-            /* .then(response => response.text())
-            .then(text => console.log(text))
-            .catch(error => console.error('Error:', error)); */
+            }).catch(error => console.log('Error:', error));
+        }
 
     }
 
-    function deleteComment() {
-        fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id + '/comments', {
+    function deleteComment(del_id) {
+        fetch('https://61924d4daeab5c0017105f1a.mockapi.io/credo/v1/news/' + id + '/comments/' + del_id, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
             },
-         /*    body: JSON.stringify({
-                name: author,
-                body: author_body,
-
-            }), */
         })
             .then(function (response) {
-                return response.json()
+                location.reload()
             }).catch(error => console.error('Error:', error));
 
     }
@@ -333,7 +313,6 @@
 <script src="bootstrp4/jquery.min.js"></script>
 <script src="bootstrp4/bootstrap.min.js"></script>
 <script src="bootstrp4/popper.min.js"></script>
-<script src="blognews.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="internet.js"></script>
 
